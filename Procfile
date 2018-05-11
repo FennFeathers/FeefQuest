@@ -1,1 +1,1 @@
-worker: python quest.py
+worker: python bot.py
