@@ -1,24 +1,17 @@
 import discord
+from discord.ext import commands
 
-TOKEN = 'NDQzNzI1NjY4NDYzOTM1NDg5.DddcrA.4uTsGpk6zm3SqpY0cmIGdYt4RZ0'
+bot = commands.Bot(command_prefix='$')
 
-client = discord.Client()
-
-@client.event
-async def on_message(message):
-    # we do not want the bot to reply to itself
-    if message.author == client.user:
-        return
-
-    if message.content.startswith('!hello'):
-        msg = 'Hello {0.author.mention}'.format(message)
-        await client.send_message(message.channel, msg)
-
-@client.event
+@bot.event
 async def on_ready():
     print('Logged in as')
-    print(client.user.name)
-    print(client.user.id)
+    print(bot.user.name)
+    print(bot.user.id)
     print('------')
 
-client.run(TOKEN)
+@bot.command()
+async def greet(ctx):
+    await ctx.send(":smiley: :wave: Hello, there!")
+
+bot.run('NDQzNzI1NjY4NDYzOTM1NDg5.DddcrA.4uTsGpk6zm3SqpY0cmIGdYt4RZ0')
