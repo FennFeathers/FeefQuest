@@ -1,1 +1,1 @@
-worker: python3 quest.py
+worker: python quest.py
