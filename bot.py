@@ -1,8 +1,6 @@
 import discord
 from discord.ext import commands
 
-feefQuest.login('XVxJDf0wkm5wlQ32BseH7UijaEcSnDk9')
-
 bot = commands.Bot(command_prefix='$')
 
 @bot.event
