@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-TOKEN = 'XVxJDf0wkm5wlQ32BseH7UijaEcSnDk9'
+feefQuest.login('XVxJDf0wkm5wlQ32BseH7UijaEcSnDk9')
 
 bot = commands.Bot(command_prefix='$')
 
