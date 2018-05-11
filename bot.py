@@ -1,17 +1,15 @@
+import asyncio
 import discord
-from discord.ext import commands
 
-bot = commands.Bot(command_prefix='$')
+class TestBot(discord.Client):
+    """ API Client. The provided api_key will be used as defaults
+        for methods requiring this information. This can then be
+        manually overridden.
+    """
+    def __init__(self,
+                 login_token='NDQzNzI1NjY4NDYzOTM1NDg5.Ddds9w.pr8w6US8a85xEBpGYW3gvnt138g'):
+        discord.Client.__init__(self)
+        self.login_token = login_token
 
-@bot.event
-async def on_ready():
-    print('Logged in as')
-    print(bot.user.name)
-    print(bot.user.id)
-    print('------')
-
-@bot.command()
-async def greet(ctx):
-    await ctx.send(":smiley: :wave: Hello, there!")
-
-bot.run()
+b = TestBot()
+b.run()
